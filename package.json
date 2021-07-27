@@ -6,7 +6,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "eslint -c .eslintrc --ext .ts ./src",
-    "start": "npm run build && electron ./dist/main.js"
+    "start": "npm run build && electron ./dist/main.js",
+    "rebuild": "npm rebuild --runtime=electron --target=12.0.15 --disturl=https://atom.io/download/atom-shell --abi=83"
   },
   "repository": "https://github.com/electron/electron-quick-start-typescript",
   "keywords": [
@@ -22,9 +23,27 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
-    "electron": "^13.1.7",
+    "electron": "^12",
     "eslint": "^7.31.0",
     "typescript": "^4.3.5"
   },
-  "dependencies": {}
+  "iohook": {
+    "targets": [
+      "node-83",
+      "electron-87"
+    ],
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "arches": [
+      "x64",
+      "ia32"
+    ]
+  },
+  "dependencies": {
+    "iohook": "^0.9.3",
+    "robotjs": "0.6.0"
+  }
 }
