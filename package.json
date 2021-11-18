@@ -25,7 +25,7 @@
     "@typescript-eslint/parser": "^4.28.4",
     "electron": "^12",
     "eslint": "^7.31.0",
-    "typescript": "^4.3.5"
+    "typescript": "^4.5.2"
   },
   "iohook": {
     "targets": [
